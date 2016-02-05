@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        ">
+	
+	<!-- context:기본설정, scan:어노테이션이 있는 패키지 경로 설정 -->
+    <context:component-scan base-package="com.newlec.webprj.controllers"></context:component-scan>      
+    <!-- services -->
+    
+    <!-- Application Context로 noticeDao를 만들어줌. -->
+        
+    
+        
+    <mvc:annotation-driven/>
+	<mvc:resources location="/content/" mapping="/content/**"></mvc:resources>
+		
+	
+	<!-- tiles에 대한 resolver를 우선순위로 설정하여 view보다 tile를 먼저 찾게함 -->
+	<!-- tiles에 대한 연결과, 지시서에 대한 설정 또한 필요하다. -->
+	<!-- <bean class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+		지시서 연결 : tiles.xml		
+		<property name="definitions" value="/WEB-INF/tiles.xml"/>
+	</bean> -->
+	
+	<!-- <bean class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		tiles연결
+		<property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView"/>
+		우선순위 설정
+		<property name="order" value="1"/>
+	</bean> -->    
+    
+    <!-- resolver : 찾아주는 애들 / viewResolver : 뷰 찾아주는 애들 -->
+
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/views/"/>
+		<property name="suffix" value=".jsp"/>
+		<!-- 우선순위 설정 -->
+		<property name="order" value="2"/>
+	</bean>
+	
+	<bean id="multipartResolver"
+        class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+         
+        <!-- setting maximum upload size -->
+        <property name="maxUploadSize" value="200000000" />
+    </bean>
+</beans>

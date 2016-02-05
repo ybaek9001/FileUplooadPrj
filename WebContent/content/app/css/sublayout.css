@@ -1,0 +1,64 @@
+﻿@import url(normalize.css);
+@import url(reset.css);
+@import url(style.css);
+@import url(header.css);
+@import url(footer.css);
+
+/*---< .content-container >-----------------------------------------------------------------------------------*/
+
+.content-container {
+	width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+	height: inherit;
+    position:relative;
+}
+
+body{
+    display:flex;
+    flex-flow:column;
+}
+
+#visual{
+    background:#313131 url("/Content/images/bg-visual.png") no-repeat center;
+    border-top:3px solid #8cba34;
+    height:171px;
+}
+
+#visual .content-container > div{
+    position:absolute;
+    height:inherit;
+}
+
+#visual .content-container > div:first-child{        
+    width:307px;
+    /*background:url("/Content/images/lecture/bg-search-visual.png") no-repeat center;*/    
+    left:0px;
+}
+
+#visual .content-container > div:last-child{
+    width:330px;
+    /*background:url("/Content/images/lecture/bg-search-text.png") no-repeat center;*/        
+    right:0px;
+}
+
+#body{
+    min-width:calc(960px - 205px - 35px);
+    min-height: 300px;
+    padding: 45px 0px 0px 35px;    
+}
+main{
+    margin-top:1px;
+    border-top:5px solid #8cba34;        
+}
+
+main .content-container{
+    display:flex;
+    background:url("/Content/images/bg-body.png") repeat-y left top;
+    padding-bottom:50px;
+}
+
+#aside{
+    min-width:205px;    
+    background:url("/Content/images/bg-aside-title.png") no-repeat top center;
+}

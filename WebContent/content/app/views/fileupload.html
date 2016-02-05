@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="fileupload-app">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="../css/fileupload.css" type="text/css" rel="stylesheet" >
+</head>
+
+<body ng-controller="fileupload-controller">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js" /></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-animate.min.js"></script>
+	<script src="../controllers/fileupload-controller.js"></script>
+
+	<h1>파일 업로드 클라이언트 예제</h1>
+	<hr>
+	<h2>단일 파일 업로드</h2>
+	<form action="../../../fileupload" method="post"
+		enctype="multipart/form-data">
+		<fieldset>
+<!-- 			<input type="text" name="notice-title" /><br /> --> 
+			<input type="file"
+				name="file" /><br /> <input type="submit" value="전송"/><br />
+		</fieldset>
+	</form>
+	<hr>
+	<h2>다중 파일 업로드</h2>
+	<form>
+		<fieldset>
+			<input type="text" name="title" /><br /> <input type="file"
+				name="files" /><br /> <input type="file" name="files" /><br /> <input
+				type="submit" /><br />
+		</fieldset>
+	</form>
+	<hr>
+	<h2>드래그 드롭 파일 업로드</h2>
+	<h3>내 파일상자</h3>
+	<ui>
+		<li ng-repeat="name in remoteFiles">
+		<img ng-src="../../upload/{{name}}"/>
+		</li>
+	</ui>
+	<div class="dropbox" ng-bind="dropboxText" ng-class="dropboxClass">
+	
+	</div>
+	<ul>
+		<li ng-repeat="f in files" ng-bind="f.name"></li>
+	</ul>
+	<div><input type="button" value="전송" ng-click="fileSendClick()"/></div>
+</body>
+</html>

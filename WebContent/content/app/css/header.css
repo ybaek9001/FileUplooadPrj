@@ -1,0 +1,207 @@
+﻿
+#header {
+	height: 70px;
+}
+
+#logo
+{
+    position:absolute;
+    left:0px;
+    top:23px;
+    z-index:1;
+}
+
+#main-menu {
+    position: absolute;
+    left: 200px;
+    top: 27px;
+    display: inline-block;
+}
+
+    #main-menu li {
+        float: left;
+        padding-left: 24px;
+        background: url("../images/bg-main-menu-vsp.png") no-repeat 13px center;
+    }
+
+        #main-menu li:first-child {
+            padding-left: 0px;
+            background: none;
+        }
+
+        #main-menu li:last-child a {
+            color:#ff6a00;   
+        }
+        
+        #main-menu li > a {
+            font-family: 맑은 고딕, 고딕, sans-serif;
+            font-size: 15px;
+            font-weight: bold;
+            color: #000000;
+        }
+                
+            #main-menu li > a:hover {
+                color:#f00;
+            }
+
+#lecture-search{	
+	width: 308px;
+    height: 25px;
+    border : 5px solid #8CBA34;
+    
+    position: absolute;
+	left:468px;
+	top:21px;
+}
+
+#lecture-search label,
+#lecture-search input {
+    display: block;
+    float: left;
+
+    /*--- lable과 input의 공통 스타일 리셋  ----*/
+    width:auto;
+    height:auto;
+    line-height:initial;
+
+    box-shadow:none;
+    transition:none;
+    padding:0px;
+    margin:0px;
+    outline:initial;
+    border-radius:initial;
+    border:none;
+    -webkit-appearance: textfield;
+
+    text-rendering: initial;    
+    letter-spacing: initial;
+    word-spacing: initial;
+    text-transform: initial;
+    text-indent: initial;
+    text-shadow: initial;    
+    text-align: initial;
+}
+#lecture-search label {
+    width: 55px;
+    height: 25px;
+    line-height: 25px;
+    font-weight: bold;
+    text-indent: 5px;
+}
+	#lecture-search input[type=text] {
+	    text-indent: 5px;
+	    width: calc(100% - 86px); /* 222px; */
+	    height: 25px;
+	    border: 0px solid #fff;
+	}
+
+    #lecture-search input[type=submit] {                
+        width: 31px;
+        height: 25px;
+        text-indent: -999px;
+        overflow: hidden;
+        background: url("../images/btn-zoom.png") no-repeat center;
+        border: 0px;
+        border-left: 1px solid #8CBA34;
+        cursor: pointer;
+    }
+
+
+/*#lecture-search {
+    position: absolute;
+    left: 468px;
+    top: 21px;
+    display: inline-block;
+    position: relative;
+    width: 308px;
+    height: 25px;
+    border: 5px solid #8CBA34;
+}
+
+#lecture-search label,
+#lecture-search input {
+    display: block;
+    float: left;
+}
+
+#lecture-search label {
+    width: 55px;
+    height: 25px;
+    line-height: 25px;
+    font-weight: bold;
+    text-indent: 5px;
+}
+
+#lecture-search input {
+    text-indent: 5px;
+    width:calc(100% - 55px - 31px);
+    
+    height: 25px;
+    border: 0px solid #fff;
+}
+
+    #lecture-search input[type=submit] {                
+        width: 31px;
+        height: 25px;
+        text-indent: -999px;
+        overflow: hidden;
+        background: url("../images/btn-zoom.png") no-repeat center;
+        border: 0px;
+        border-left: 1px solid #8CBA34;
+        cursor: pointer;
+    }*/
+
+#joinus-menu{	
+	position: absolute;
+    right: 0px;
+    top: 20px;
+    display: inline-block;
+}
+
+	#joinus-menu li{
+		float:left;
+		padding-left: 9px;
+		background: url("../images/bg-joinus-menu-vsp.png") no-repeat 4px center;
+	}
+	
+	#joinus-menu li:first-child{		
+		padding-left: 0px;
+		background: none;
+	}
+	
+		#joinus-menu li > a,
+        #joinus-menu li form a{
+			font-family: "맑은 고딕", sans-serif;
+			font-size:10px;
+			font-weight:bold;
+			color:#979797;	
+			text-decoration: none;			
+		}	
+        	
+        #joinus-menu li > a:hover,
+        #joinus-menu li form a:hover {
+                text-decoration: underline;
+            }                
+
+#member-menu {
+    position: absolute;
+    right: 0px;
+    top: 40px;
+    display: inline-block;
+}
+
+    #member-menu li {
+        float: left;
+    }
+
+    #member-menu .btn-mypage {
+        width: 72px;
+        height: 17px;
+        background: url("../images/txt-mypage.png") no-repeat center;
+    }
+
+    #member-menu .btn-customer {
+        width: 72px;
+        height: 17px;
+        background: url("../images/txt-customer.png") no-repeat center;
+    }

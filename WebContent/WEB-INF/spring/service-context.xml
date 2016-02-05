@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+      ">
+    
+    <context:component-scan base-package="com.newlec.webprj.controllers"></context:component-scan>  
+      
+	<bean name="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+		<property name="url" value="jdbc:sqlserver://211.238.142.251:1433;databaseName=edudb"/>
+		<property name="username" value="edu"/>
+		<property name="password" value="class2d"/>
+	</bean>
+	
+	<bean name="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="mapperLocations" value="classpath:com/newlec/webprj/dao/mybatis/mapper/*.xml"></property>
+	</bean>
+	
+	<bean name="sqlSession" id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg index="0" ref="sqlSessionFactory"></constructor-arg>	
+	</bean>
+	
+	<bean name="noticeDao" class="com.newlec.webprj.dao.mybatis.MyBatisNoticeDao" >
+		<!-- autowired를 사용하는 게 아닌, 직접 설정하기 -->
+		<!-- <property name="sqlSession" ref="sqlSession"></property> -->
+	</bean>
+	
+	<bean name="memberDao" class="com.newlec.webprj.dao.mybatis.MyBatisMemberDao" />
+
+
+</beans>

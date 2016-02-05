@@ -1,0 +1,11 @@
+﻿@import url(../sublayout.css);
+@import url(aside.css);
+
+/*---< .content-container >-----------------------------------------------------------------------------------*/
+
+#visual .content-container > div:first-child {
+    background: url("/Content/images/customer/bg-customer-visual.png") no-repeat center;
+}
+#visual .content-container > div:last-child{
+    background:url("/Content/images/customer/bg-customer-text.png") no-repeat center;
+}

@@ -1,0 +1,49 @@
+﻿@import url(normalize.css);
+@import url(reset.css);
+@import url(style.css);
+@import url(header.css);
+@import url(footer.css);
+
+
+/*---------------------------------------------------------------------------------------*/
+
+.content-container {	
+	margin-left: auto;
+	margin-right: auto;
+    width: 960px;
+	height: inherit;
+    position:relative;
+}
+
+#body {
+	min-height: 300px;
+	border-top:5px solid #8CBA34;
+	margin-top:1px;	
+}
+
+
+#body .content-container{
+    /*display:-ms-grid;
+    -ms-grid-columns:205px 755px;
+    -ms-grid-rows:auto;*/
+    display:flex;
+}
+
+#aside {
+    /*-ms-grid-row:1;
+    -ms-grid-column:1;*/
+    width: 205px;
+	
+    height: inherit;    
+	/*float: left;*/
+}
+
+#main {
+    /*-ms-grid-row:1;
+    -ms-grid-column:2;*/
+    width: 755px;
+
+    position: relative;
+	height: inherit;	
+	/*float: left;*/    
+}

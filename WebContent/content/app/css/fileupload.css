@@ -1,0 +1,15 @@
+@CHARSET "UTF-8";
+.dropbox{
+	width:500px;
+	height: 200px;
+	background:yellow;
+	border: 1px solid $e9e9e9;
+}
+
+.dropbox.valid{
+	background:green;
+}
+
+.dropbox.invalid{
+	background:red;
+}
